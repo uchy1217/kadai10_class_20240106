@@ -1,6 +1,6 @@
 <?php
 // ベースカラーを緑に設定するかどうかの変数
-$baseColorGreen = true;
+$baseColor = true;
 
 // 0. SESSION開始！！
 session_start();
@@ -53,21 +53,23 @@ if ($status == false) {
             font-size: 16px;
         }
 
-        <?php if ($baseColorGreen): ?>
+        <?php if ($baseColor): ?>
         /* ベースカラーを緑にするスタイル */
-            body {
-                background-color: #e9f5ee; /* 薄い緑色 */
-            }
+        body {
+            background: linear-gradient(to right, rgba(190, 3, 169, 0.5), rgba(255, 182, 193, 0.5));
+        }
+        .navbar-default {
+            background: linear-gradient(to right, #be03a9, #ffb6c1); /* より薄い紫色とピンクのグラデーション */
+        }
 
-            .navbar-default {
-                background-color: #28a745; /* 明るい緑色 */
-                border-color: #28a745; /* 濃い緑色 */
-            }
+        .container-fluid {
+            border:none;
+        }
 
-            .navbar-default .navbar-brand {
-                color: white;
-            }
-        /* ここに他の緑色スタイルを追加 */
+        .navbar-default .navbar-brand {
+            color: white;
+        }
+
         <?php endif; ?>
 
         </style>
@@ -79,9 +81,10 @@ if ($status == false) {
 <body id="main">
     <!-- Head[Start] -->
     <header>
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
+    <nav class="navbar navbar-default" style="border: none;"> <!-- 枠線を無くすスタイルを追加 -->
+                <div class="container-fluid">
                 <div class="navbar-header">
+                    <div class="navbar-header"><img src="./img/proimg2.png" alt="img" class="img" style="width: 50px; height: 50px;"></div> <!-- 同じサイズに設定 -->
                     <a class="navbar-brand" href="index.php">データ登録</a>
                 </div>
             </div>
